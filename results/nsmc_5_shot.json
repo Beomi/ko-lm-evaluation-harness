@@ -1,0 +1,22 @@
+{
+  "results": {
+    "nsmc": {
+      "acc": 0.74418,
+      "acc_stderr": 0.0019513069220320888
+    }
+  },
+  "versions": {
+    "nsmc": 0
+  },
+  "config": {
+    "model": "gpt2",
+    "model_args": "pretrained=beomi/llama-2-ko-7b",
+    "num_fewshot": 5,
+    "batch_size": null,
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

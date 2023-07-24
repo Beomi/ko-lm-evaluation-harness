@@ -1,0 +1,70 @@
+{
+  "results": {
+    "klue_nli": {
+      "acc": 0.31266666666666665,
+      "acc_stderr": 0.008465181264372672
+    },
+    "klue_sts": {
+      "acc": 0.4238921001926782,
+      "acc_stderr": 0.021712743246300428,
+      "f1": 0.5953991880920163,
+      "f1_stderr": 0.021498818176917057
+    },
+    "klue_ynat": {
+      "f1": 0.33258098627814875,
+      "f1_stderr": 0.005451317837783359
+    },
+    "kohatespeech": {
+      "acc": 0.40764331210191085,
+      "acc_stderr": 0.022666417290057427,
+      "macro_f1": 0.3794656215447441,
+      "macro_f1_stderr": 0.020351405153075052
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5098143236074271,
+      "acc_stderr": 0.008142790404217842,
+      "macro_f1": 0.3381503823683085,
+      "macro_f1_stderr": 0.003622704849999326
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.14437367303609341,
+      "acc_stderr": 0.016212020466187634,
+      "macro_f1": 0.1272363611283537,
+      "macro_f1_stderr": 0.012697919908818814
+    },
+    "korunsmile": {
+      "f1": 0.3953292659046242,
+      "f1_stderr": 0.00804382307518717
+    },
+    "nsmc": {
+      "acc": 0.57952,
+      "acc_stderr": 0.002207629693715653
+    },
+    "pawsx_ko": {
+      "acc": 0.4545,
+      "acc_stderr": 0.01113673598700373
+    }
+  },
+  "versions": {
+    "klue_nli": 0,
+    "klue_sts": 0,
+    "klue_ynat": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "gpt2",
+    "model_args": "pretrained=EleutherAI/polyglot-ko-1.3b",
+    "num_fewshot": 0,
+    "batch_size": null,
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

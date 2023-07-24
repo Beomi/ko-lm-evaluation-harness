@@ -1,0 +1,47 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.6837606837606838,
+      "acc_stderr": 0.012414555039874205,
+      "macro_f1": 0.6801093643198908,
+      "macro_f1_stderr": 0.012467093640283632
+    },
+    "kobest_copa": {
+      "acc": 0.781,
+      "acc_stderr": 0.013084731950262026,
+      "macro_f1": 0.7807612490001612,
+      "macro_f1_stderr": 0.01312479429795777
+    },
+    "kobest_hellaswag": {
+      "acc": 0.476,
+      "acc_stderr": 0.0223572738810164,
+      "acc_norm": 0.508,
+      "acc_norm_stderr": 0.022380208834928028,
+      "macro_f1": 0.47260652999278085,
+      "macro_f1_stderr": 0.022319076228353715
+    },
+    "kobest_sentineg": {
+      "acc": 0.871536523929471,
+      "acc_stderr": 0.016814541820470066,
+      "macro_f1": 0.8711408114558473,
+      "macro_f1_stderr": 0.016915326707682348
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0
+  },
+  "config": {
+    "model": "gpt2",
+    "model_args": "pretrained=../EasyLM/llama-2-ko-7b",
+    "num_fewshot": 10,
+    "batch_size": null,
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
