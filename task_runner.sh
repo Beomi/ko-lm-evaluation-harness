@@ -18,7 +18,7 @@ python main.py \
 --tasks $TASKS \
 --num_fewshot $num_fewshot \
 --device cuda:$GPU_NO \
---batch_size 32 \
+--batch_size 2 \
 --no_cache \
 --output_path $RESULT_DIR/$CURRENT_TRAINED_TOKENS/${num_fewshot}_shot.json \
 2>&1 | tee "logs/gpu_${GPU_NO}_model_${CURRENT_MODEL}_fewshot_${num_fewshot}.log"
