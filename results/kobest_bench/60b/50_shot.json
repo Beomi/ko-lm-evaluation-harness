@@ -1,0 +1,47 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.6666666666666666,
+      "acc_stderr": 0.012585338691517272,
+      "macro_f1": 0.6564602447282621,
+      "macro_f1_stderr": 0.012803917002491326
+    },
+    "kobest_copa": {
+      "acc": 0.831,
+      "acc_stderr": 0.011856625977890115,
+      "macro_f1": 0.8309389689677974,
+      "macro_f1_stderr": 0.011850191355989583
+    },
+    "kobest_hellaswag": {
+      "acc": 0.45,
+      "acc_stderr": 0.022270877485360437,
+      "acc_norm": 0.492,
+      "acc_norm_stderr": 0.022380208834928035,
+      "macro_f1": 0.4474761146574778,
+      "macro_f1_stderr": 0.022194673089820646
+    },
+    "kobest_sentineg": {
+      "acc": 0.5012594458438288,
+      "acc_stderr": 0.025125865671612197,
+      "macro_f1": 0.3426712603692802,
+      "macro_f1_stderr": 0.013568633285733718
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0
+  },
+  "config": {
+    "model": "gpt2",
+    "model_args": "pretrained=/home/beomi/coding-ssd2t/EasyLM/llama-2-ko-7b",
+    "num_fewshot": 50,
+    "batch_size": null,
+    "device": "cuda:3",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
