@@ -1,0 +1,70 @@
+{
+  "results": {
+    "klue_nli": {
+      "acc": 0.3426666666666667,
+      "acc_stderr": 0.008666435817412554
+    },
+    "klue_sts": {
+      "acc": 0.49710982658959535,
+      "acc_stderr": 0.021968371740875285,
+      "f1": 0.5380530973451327,
+      "f1_stderr": 0.02545495354843367
+    },
+    "klue_ynat": {
+      "f1": 0.3375633867043006,
+      "f1_stderr": 0.005459940407836051
+    },
+    "kohatespeech": {
+      "acc": 0.39065817409766457,
+      "acc_stderr": 0.022505052156592358,
+      "macro_f1": 0.37818580365054627,
+      "macro_f1_stderr": 0.02277184352062678
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5856763925729443,
+      "acc_stderr": 0.008023902269439859,
+      "macro_f1": 0.5852130700067846,
+      "macro_f1_stderr": 0.008005896727937813
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.6560509554140127,
+      "acc_stderr": 0.021911237732422862,
+      "macro_f1": 0.470125,
+      "macro_f1_stderr": 0.02116833810698325
+    },
+    "korunsmile": {
+      "f1": 0.3043553565469515,
+      "f1_stderr": 0.0069451584166829615
+    },
+    "nsmc": {
+      "acc": 0.74418,
+      "acc_stderr": 0.0019513069220320888
+    },
+    "pawsx_ko": {
+      "acc": 0.5125,
+      "acc_stderr": 0.011179640744835741
+    }
+  },
+  "versions": {
+    "klue_nli": 0,
+    "klue_sts": 0,
+    "klue_ynat": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "gpt2",
+    "model_args": "pretrained=beomi/llama-2-ko-7b",
+    "num_fewshot": 5,
+    "batch_size": null,
+    "device": "cuda:3",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

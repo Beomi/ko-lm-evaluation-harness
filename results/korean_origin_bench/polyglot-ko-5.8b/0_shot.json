@@ -11,8 +11,8 @@
       "f1_stderr": 0.021727012224528094
     },
     "klue_ynat": {
-      "f1": 0.33616782324773664,
-      "f1_stderr": 0.005234110309324283
+      "f1": 0.3365030225085652,
+      "f1_stderr": 0.005236378581415019
     },
     "kohatespeech": {
       "acc": 0.3248407643312102,
@@ -33,16 +33,16 @@
       "macro_f1_stderr": 0.01239007174718049
     },
     "korunsmile": {
-      "f1": 0.41109596243982677,
-      "f1_stderr": 0.007595580522927635
+      "f1": 0.41093843250914003,
+      "f1_stderr": 0.007595857742059611
     },
     "nsmc": {
-      "acc": 0.55818,
-      "acc_stderr": 0.002220900808231824
+      "acc": 0.55824,
+      "acc_stderr": 0.0022208693552791298
     },
     "pawsx_ko": {
-      "acc": 0.4855,
-      "acc_stderr": 0.011178432523249468
+      "acc": 0.487,
+      "acc_stderr": 0.011179355482070379
     }
   },
   "versions": {
@@ -60,8 +60,8 @@
     "model": "gpt2",
     "model_args": "pretrained=EleutherAI/polyglot-ko-5.8b",
     "num_fewshot": 0,
-    "batch_size": "8",
-    "device": "cuda:3",
+    "batch_size": null,
+    "device": "cuda:0",
     "no_cache": false,
     "limit": null,
     "bootstrap_iters": 100000,
