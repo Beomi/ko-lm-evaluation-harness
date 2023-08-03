@@ -78,7 +78,7 @@ class Korquad(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`. 
         """
-        continuation = rf.greedy_until(ctx, ['\n'])
+        continuation = rf.greedy_until(ctx, {"until": ["\n"]})
         return continuation
     
     def process_results(self, doc, results):
@@ -102,7 +102,8 @@ class Korquad(Task):
             'id': doc['id'],
             'answers': doc['answers'],
         }
-
+        # print('pred', continuation)
+        # print('ref', doc['answers'])
         return { 
             'exact_match': (predictions, references), # Exact match (the normalized answer exactly match the gold answer)
             'f1': (predictions, references), #  The F-score of predicted tokens versus the gold answer
