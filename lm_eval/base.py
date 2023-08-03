@@ -397,7 +397,11 @@ class BaseLM(LM):
                 until = [until]
 
             if until:
-                (primary_until,) = self.tok_encode(until[0])
+                tokens = self.tok_encode(until[0])
+                if len(tokens) > 1:
+                    (primary_until,) = tokens[1:]
+                else:
+                    (primary_until,) = tokens
             else:
                 primary_until = None
 
