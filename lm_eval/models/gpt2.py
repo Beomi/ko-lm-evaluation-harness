@@ -44,11 +44,12 @@ class HFLM(BaseLM):
         self.gpt2 = transformers.AutoModelForCausalLM.from_pretrained(
             pretrained,
             load_in_8bit=load_in_8bit,
-            low_cpu_mem_usage=low_cpu_mem_usage,
+            low_cpu_mem_usage=True,
             revision=revision,
             trust_remote_code=trust_remote_code,
-            torch_dtype=torch.float16,
-        ).to(self.device)
+            # torch_dtype=torch.float16,
+            device_map='auto',
+        )# .to(self.device)
         self.gpt2.eval()
 
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(
