@@ -68,17 +68,17 @@ class STS(Task):
         return self.dataset["validation"]
 
     def doc_to_text(self, doc):
-        return "질문: 문장 1과 문장 2는 서로 유사한 의미를 가지나요?\n문장 1: {}\n문장 2: {}\n정답:".format(
+        return "문장1: {}\n문장2: {}\n정답:".format(
             general_detokenize(doc["sentence1"]),
             general_detokenize(doc["sentence2"]) 
         )
 
     def doc_to_target(self, doc):
-        return " {}".format({0: "아니오", 1: "예"}[doc["labels"]["binary-label"]])
+        return " {}".format({0: "다름", 1: "같음"}[doc["labels"]["binary-label"]])
 
     def construct_requests(self, doc, ctx):
-        ll_negative, _ = rf.loglikelihood(ctx, " 아니오")
-        ll_positive, _ = rf.loglikelihood(ctx, " 예")
+        ll_negative, _ = rf.loglikelihood(ctx, " 같음")
+        ll_positive, _ = rf.loglikelihood(ctx, " 다름")
         return ll_negative, ll_positive
 
     def process_results(self, doc, results):
@@ -124,6 +124,12 @@ class YNAT(MultipleChoiceTask):
     def validation_docs(self):
         return map(self._process_doc, self.dataset["validation"])
 
+    def construct_requests(self, doc, ctx):
+        lls = [
+            rf.loglikelihood(ctx, " ({})".format(choice))[0] for choice in doc["choices"]
+        ]
+        return lls
+    
     def _process_doc(self, doc):
         out_doc = {
             "title": doc["title"],
@@ -141,18 +147,24 @@ class YNAT(MultipleChoiceTask):
     def process_results(self, doc, results):
         pred = np.argmax(results)
         gold = doc["gold"]
+        
+        acc = 1.0 if np.argmax(results) == gold else 0.0
+        
         return {
-            "f1": (gold, pred)
+            "acc": acc,
+            "macro_f1": (gold, pred)
         }
 
     def higher_is_better(self):
         return {
-            "f1": True
+            "acc": True,
+            "macro_f1": True,
         }
 
     def aggregation(self):
         return {
-            "f1": macro_f1_score
+            "acc": mean,
+            "macro_f1": macro_f1_score,
         }
 
 
@@ -179,36 +191,41 @@ class NLI(Task):
         return self.dataset["validation"]
 
     def doc_to_text(self, doc):
-        return "{}\n질문: {} 참, 거짓, 중립 중 무엇인가요?\n정답:".format(
+        return "{}:{}".format(
             doc["premise"],
             doc["hypothesis"].strip()
-            + ("" if doc["hypothesis"].strip().endswith(".") else "."),
         )
 
     def doc_to_target(self, doc):
         """
         참 = entailment
-        거짓 = contradiction
-        무관 = neutral
+        모순 = contradiction
+        중립 = neutral
         """
-        return " {}".format({0: "참", 1: "중립", 2: "거짓"}[doc["label"]])
+        return " ({})".format({0: "참", 1: "중립", 2: "모순"}[doc["label"]])
 
     def construct_requests(self, doc, ctx):
-        ll_true, _ = rf.loglikelihood(ctx, " 참")
-        ll_neither, _ = rf.loglikelihood(ctx, " 중립")
-        ll_false, _ = rf.loglikelihood(ctx, " 거짓")
+        ll_true, _ = rf.loglikelihood(ctx, " (참)")
+        ll_neither, _ = rf.loglikelihood(ctx, " (중립)")
+        ll_false, _ = rf.loglikelihood(ctx, " (모순)")
         return ll_true, ll_neither, ll_false
 
     def process_results(self, doc, results):
         gold = doc["label"]
         pred = np.argmax(results)
-        return {"acc": pred == gold}
+        return {
+            "acc": pred == gold,
+        }
 
     def higher_is_better(self):
-        return {"acc": True}
+        return {
+            "acc": True,
+        }
 
     def aggregation(self):
-        return {"acc": mean}
+        return {
+            "acc": mean,
+        }
 
 
 class MRC(Task):
@@ -232,12 +249,12 @@ class MRC(Task):
         return self.dataset["validation"]
 
     def doc_to_text(self, doc):
-        return "제목: " + doc["title"] + "\n\n" + "본문: " + doc["context"] + "\n\n" + "질문: " + doc["question"] + "\n\n" + "답:"
+        return '\n####\n' + "제목: " + doc["title"] + "\n####\n" + "내용: " + doc["context"] + "\n####\n" + "문제: " + doc["question"] + "\n####\n" + "정답:"
 
     def doc_to_target(self, doc):
         answer = doc["answers"]["text"][0]
         if doc["is_impossible"]:
-            answer = "대답 불가"
+            answer = "없음"
         return " " + answer
 
     def construct_requests(self, doc, ctx):
@@ -251,8 +268,8 @@ class MRC(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`. 
         """
-        continuation = rf.greedy_until(ctx, {"until": ["\n"]})
-        is_unanswerable = rf.loglikelihood(ctx, " " + "대답 불가")
+        continuation = rf.greedy_until(ctx, {"until": ["\n", "\u200b", "##"]})
+        is_unanswerable = rf.loglikelihood(ctx, " " + "없음")
         return continuation, is_unanswerable
     
     def process_results(self, doc, results):
@@ -265,6 +282,8 @@ class MRC(Task):
         :param results:
             The results of the requests created in construct_requests.
         """
+        print('ret:', results)
+        print('ans:', doc['answers'])
         continuation, (logprob_unanswerable, _) = results
 
         no_answer_probability = exp(logprob_unanswerable)

@@ -59,7 +59,7 @@ class Korquad(Task):
         return self.dataset["dev"]
 
     def doc_to_text(self, doc):
-        return '제목: ' + doc['title'] + '\n\n' + '본문: ' + doc['context'] + '\n\n' + '질문: ' + doc['question'] + '\n\n' + '답:'
+        return '\n####\n' + '제목: ' + doc['title'] + '\n####\n' + '내용: ' + doc['context'] + '\n####\n' + '문제: ' + doc['question'] + '\n####\n' + '정답:'
 
     def doc_to_target(self, doc):
         answer_list = doc['answers']['text']
@@ -78,7 +78,7 @@ class Korquad(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`. 
         """
-        continuation = rf.greedy_until(ctx, {"until": ["\n"]})
+        continuation = rf.greedy_until(ctx, {"until": ["\n", "\u200b", "##"]})
         return continuation
     
     def process_results(self, doc, results):
@@ -93,17 +93,21 @@ class Korquad(Task):
         """
         continuation = results
         
+#         for a in doc['answers']['text']:
+#             if a.strip() in results[0].strip():
+#                 continuation = [results[0][:len(a.strip())+1]]
+        
         predictions = {
             'id': doc['id'],
             'prediction_text': continuation
         }
-
+        
         references = {
             'id': doc['id'],
             'answers': doc['answers'],
         }
-        # print('pred', continuation)
-        # print('ref', doc['answers'])
+        print('pred', predictions)
+        print('ref', references)
         return { 
             'exact_match': (predictions, references), # Exact match (the normalized answer exactly match the gold answer)
             'f1': (predictions, references), #  The F-score of predicted tokens versus the gold answer
