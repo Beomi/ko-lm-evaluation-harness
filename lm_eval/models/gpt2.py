@@ -47,7 +47,7 @@ class HFLM(BaseLM):
             low_cpu_mem_usage=True,
             revision=revision,
             trust_remote_code=trust_remote_code,
-            # torch_dtype=torch.float16,
+            torch_dtype='auto',
             device_map='auto',
         )# .to(self.device)
         self.gpt2.eval()
