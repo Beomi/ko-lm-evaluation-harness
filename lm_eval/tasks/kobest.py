@@ -50,12 +50,13 @@ class BoolQ(Task):
         return self.dataset["test"]
 
     def doc_to_text(self, doc):
-        return "{} 질문: {} 답변: ".format(doc["paragraph"], doc["question"])
+        return "내용: {}\n질문: 다음 문장이 내용에 있는 사실과 일치하는가?\n문장: {}\n응답: ".format(doc["paragraph"], doc["question"])
 
     def doc_to_target(self, doc):
         return " {}".format({0: "아니오", 1: "예"}[doc["label"]])
 
     def construct_requests(self, doc, ctx):
+        print(ctx)
         ll_no, _ = rf.loglikelihood(ctx, " 아니오")
         ll_yes, _ = rf.loglikelihood(ctx, " 예")
 
@@ -125,8 +126,8 @@ class COPA(Task):
         return " " + correct_choice
         
     def construct_requests(self, doc, ctx):
-        ll_choice1, _ = rf.loglikelihood(ctx, " "+doc["alternative_1"])
-        ll_choice2, _ = rf.loglikelihood(ctx, " "+doc["alternative_2"])
+        ll_choice1, _ = rf.loglikelihood(ctx.strip(), doc["alternative_1"])
+        ll_choice2, _ = rf.loglikelihood(ctx.strip(), doc["alternative_2"])
 
         return ll_choice1, ll_choice2
 
@@ -177,14 +178,14 @@ class WiC(Task):
         return self.dataset["test"]
 
     def doc_to_text(self, doc):
-        return "문장1: {} 문장2: {} 두 문장에서 {}가 같은 뜻으로 쓰였나?".format(doc["context_1"], doc["context_2"], doc["word"])
+        return "문장1: {}\n문장2: {}\n질문: 문장1과 문장2에서 쓰인 단어 [{}]가 같은 뜻으로 쓰였나?\n응답: ".format(doc["context_1"], doc["context_2"], doc["word"])
 
     def doc_to_target(self, doc):
-        return " {}".format({0: "아니오", 1: "예"}[doc["label"]])
+        return "{}".format({0: "아니오", 1: "예"}[doc["label"]])
 
     def construct_requests(self, doc, ctx):
-        ll_no, _ = rf.loglikelihood(ctx, " 아니오")
-        ll_yes, _ = rf.loglikelihood(ctx, " 예")
+        ll_no, _ = rf.loglikelihood(ctx, "아니오")
+        ll_yes, _ = rf.loglikelihood(ctx, "예")
 
         return ll_no, ll_yes
 
@@ -236,7 +237,7 @@ class HellaSwag(MultipleChoiceTask):
 
     def _process_doc(self, doc):
         out_doc = {
-            "query": "문장: {}".format(doc["context"]),
+            "query": "{}".format(doc["context"]),
             "choices": [doc["ending_1"], doc["ending_2"], doc["ending_3"], doc["ending_4"]],
             "gold": int(doc['label']),
         }
@@ -248,8 +249,8 @@ class HellaSwag(MultipleChoiceTask):
     def process_results(self, doc, results):
         pred = np.argmax(results)
         gold = doc["gold"]
-
-        acc = 1. if np.argmax(results) == gold else 0.
+        
+        acc = 1. if pred == gold else 0.
         completion_len = np.array([float(len(i)) for i in doc["choices"]])
         acc_norm = 1. if np.argmax(results / completion_len) == gold else 0.
 
@@ -300,14 +301,14 @@ class SentiNeg(Task):
         return self.dataset["test"]
 
     def doc_to_text(self, doc):
-        return "문장: {} 긍부정:".format(doc["sentence"])
+        return "{}".format(doc["sentence"])
 
     def doc_to_target(self, doc):
-        return " {}".format({0: "부정", 1: "긍정"}[doc["label"]])
+        return " ({})".format({0: "부정", 1: "긍정"}[doc["label"]])
 
     def construct_requests(self, doc, ctx):
-        ll_no, _ = rf.loglikelihood(ctx, " 부정")
-        ll_yes, _ = rf.loglikelihood(ctx, " 긍정")
+        ll_no, _ = rf.loglikelihood(ctx, " (부정)")
+        ll_yes, _ = rf.loglikelihood(ctx, " (긍정)")
 
         return ll_no, ll_yes
 

@@ -56,6 +56,7 @@ class HellaSwag(MultipleChoiceTask):
             "choices": [self.preprocess(ending) for ending in doc["endings"]],
             "gold": int(doc["label"]),
         }
+
         return out_doc
 
     @classmethod

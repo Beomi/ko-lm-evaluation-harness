@@ -55,6 +55,7 @@ from . import nsmc
 from . import klue
 from . import ko_translation
 from . import korquad
+from . import kowikitable
 from . import korunsmile
 from . import kohatespeech
 from . import kold
@@ -335,6 +336,7 @@ TASK_REGISTRY = {
     "klue_mrc": klue.MRC,
     "nsmc": nsmc.NSMC,    
     "korquad": korquad.Korquad,
+    "kowikitable": kowikitable.KoWikiTable,
     "kobest_boolq": kobest.BoolQ,
     "kobest_copa": kobest.COPA,
     "kobest_wic": kobest.WiC,
