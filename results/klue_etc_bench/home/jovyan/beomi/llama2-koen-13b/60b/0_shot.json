@@ -1,0 +1,53 @@
+{
+  "results": {
+    "kohatespeech": {
+      "acc": 0.37791932059447986,
+      "acc_stderr": 0.02236526123330115,
+      "macro_f1": 0.2782237735117316,
+      "macro_f1_stderr": 0.01823070225638467
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5098143236074271,
+      "acc_stderr": 0.008142790404217842,
+      "macro_f1": 0.3376669009135629,
+      "macro_f1_stderr": 0.0035712112150843973
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.2484076433121019,
+      "acc_stderr": 0.019930799754225646,
+      "macro_f1": 0.24840425531914895,
+      "macro_f1_stderr": 0.019956572782516804
+    },
+    "korunsmile": {
+      "f1": 0.3271448770247813,
+      "f1_stderr": 0.007603863891200371
+    },
+    "nsmc": {
+      "acc": 0.6442,
+      "acc_stderr": 0.0021410789066205315
+    },
+    "pawsx_ko": {
+      "acc": 0.5355,
+      "acc_stderr": 0.01115491331411956
+    }
+  },
+  "versions": {
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/jovyan/beomi/llama2-koen-13b,use_accelerate=true",
+    "num_fewshot": 0,
+    "batch_size": "32",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
