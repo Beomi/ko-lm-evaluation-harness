@@ -1,5 +1,6 @@
 # ./run_all.sh jyoung105/KoR-Orca-Platypus-13B-neft
 
+export CUDA_VISIBLE_DEVICES=$2
 export TOKENIZERS_PARALLELISM=false
 
 RESULT_DIR='results/all'
