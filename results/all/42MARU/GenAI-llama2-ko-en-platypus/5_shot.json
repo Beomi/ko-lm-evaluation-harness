@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.8141025641025641,
+      "acc_stderr": 0.010385978651409696,
+      "macro_f1": 0.8135417371610356,
+      "macro_f1_stderr": 0.010424057327239705
+    },
+    "kobest_copa": {
+      "acc": 0.811,
+      "acc_stderr": 0.012386784588117709,
+      "macro_f1": 0.8108999660820575,
+      "macro_f1_stderr": 0.012435218506356776
+    },
+    "kobest_hellaswag": {
+      "acc": 0.484,
+      "acc_stderr": 0.0223716109825804,
+      "acc_norm": 0.552,
+      "acc_norm_stderr": 0.022261697292270125,
+      "macro_f1": 0.48147649376774954,
+      "macro_f1_stderr": 0.022366890859630513
+    },
+    "kobest_sentineg": {
+      "acc": 0.9420654911838791,
+      "acc_stderr": 0.011739824898496697,
+      "macro_f1": 0.942065491183879,
+      "macro_f1_stderr": 0.011759458260635498
+    },
+    "kohatespeech": {
+      "acc": 0.3821656050955414,
+      "acc_stderr": 0.022413666773868076,
+      "macro_f1": 0.3688722825895889,
+      "macro_f1_stderr": 0.022494443143890947
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.6228116710875331,
+      "acc_stderr": 0.007894859863844797,
+      "macro_f1": 0.5996927732722903,
+      "macro_f1_stderr": 0.00809882306249507
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.7006369426751592,
+      "acc_stderr": 0.021124998664684036,
+      "macro_f1": 0.5008080458819727,
+      "macro_f1_stderr": 0.023009352783165425
+    },
+    "korunsmile": {
+      "f1": 0.34384895864374315,
+      "f1_stderr": 0.007869717555038718
+    },
+    "nsmc": {
+      "acc": 0.8477,
+      "acc_stderr": 0.0016069056733107737
+    },
+    "pawsx_ko": {
+      "acc": 0.531,
+      "acc_stderr": 0.011161621338114476
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=42MARU/GenAI-llama2-ko-en-platypus,use_accelerate=true",
+    "num_fewshot": 5,
+    "batch_size": "16",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

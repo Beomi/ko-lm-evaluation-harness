@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.5149572649572649,
+      "acc_stderr": 0.013342793395105123,
+      "macro_f1": 0.36342894198433945,
+      "macro_f1_stderr": 0.008774657514159677
+    },
+    "kobest_copa": {
+      "acc": 0.783,
+      "acc_stderr": 0.01304151375727071,
+      "macro_f1": 0.7829216347101303,
+      "macro_f1_stderr": 0.013054221344602646
+    },
+    "kobest_hellaswag": {
+      "acc": 0.46,
+      "acc_stderr": 0.022311333245289663,
+      "acc_norm": 0.552,
+      "acc_norm_stderr": 0.022261697292270125,
+      "macro_f1": 0.4575048765597546,
+      "macro_f1_stderr": 0.02229493068031093
+    },
+    "kobest_sentineg": {
+      "acc": 0.9521410579345088,
+      "acc_stderr": 0.010727156105217926,
+      "macro_f1": 0.9521398432790837,
+      "macro_f1_stderr": 0.010787366583247818
+    },
+    "kohatespeech": {
+      "acc": 0.39065817409766457,
+      "acc_stderr": 0.02250505215659235,
+      "macro_f1": 0.3607209215904868,
+      "macro_f1_stderr": 0.02254884045181106
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5206896551724138,
+      "acc_stderr": 0.008137383934087812,
+      "macro_f1": 0.3693102183763334,
+      "macro_f1_stderr": 0.00552484168923224
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.3524416135881104,
+      "acc_stderr": 0.022036069203839933,
+      "macro_f1": 0.3332049145705785,
+      "macro_f1_stderr": 0.020981189028331012
+    },
+    "korunsmile": {
+      "f1": 0.374663106522419,
+      "f1_stderr": 0.008077190184080455
+    },
+    "nsmc": {
+      "acc": 0.87258,
+      "acc_stderr": 0.0014912167335928185
+    },
+    "pawsx_ko": {
+      "acc": 0.5435,
+      "acc_stderr": 0.011140733053371396
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=jyoung105/KoR-Orca-Platypus-13B-neft,use_accelerate=true",
+    "num_fewshot": 10,
+    "batch_size": "8",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
