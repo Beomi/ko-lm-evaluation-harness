@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.5242165242165242,
+      "acc_stderr": 0.013333101802438092,
+      "macro_f1": 0.39744037828947365,
+      "macro_f1_stderr": 0.01093767869036835
+    },
+    "kobest_copa": {
+      "acc": 0.78,
+      "acc_stderr": 0.013106173040661763,
+      "macro_f1": 0.7795732538193945,
+      "macro_f1_stderr": 0.01312253891645664
+    },
+    "kobest_hellaswag": {
+      "acc": 0.496,
+      "acc_stderr": 0.02238235778196214,
+      "acc_norm": 0.614,
+      "acc_norm_stderr": 0.021793529219281172,
+      "macro_f1": 0.4931649097251999,
+      "macro_f1_stderr": 0.02238150700411745
+    },
+    "kobest_sentineg": {
+      "acc": 0.5894206549118388,
+      "acc_stderr": 0.024720863191996765,
+      "macro_f1": 0.5024259340422751,
+      "macro_f1_stderr": 0.02503023154305307
+    },
+    "kohatespeech": {
+      "acc": 0.3184713375796178,
+      "acc_stderr": 0.02148959890519365,
+      "macro_f1": 0.2643465374613933,
+      "macro_f1_stderr": 0.01874076532011924
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5265251989389921,
+      "acc_stderr": 0.008132890907836662,
+      "macro_f1": 0.3807820065020443,
+      "macro_f1_stderr": 0.005972261568000001
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.17834394904458598,
+      "acc_stderr": 0.01765734039898034,
+      "macro_f1": 0.16972082154716517,
+      "macro_f1_stderr": 0.016381281448276514
+    },
+    "korunsmile": {
+      "f1": 0.396283049617425,
+      "f1_stderr": 0.007429778906667022
+    },
+    "nsmc": {
+      "acc": 0.56508,
+      "acc_stderr": 0.002217067924038907
+    },
+    "pawsx_ko": {
+      "acc": 0.522,
+      "acc_stderr": 0.01117230550088488
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=EleutherAI/polyglot-ko-12.8b,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 0,
+    "batch_size": "32",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
