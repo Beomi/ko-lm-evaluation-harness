@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.7670940170940171,
+      "acc_stderr": 0.011284590001984476,
+      "macro_f1": 0.7587571823792296,
+      "macro_f1_stderr": 0.011591798658397328
+    },
+    "kobest_copa": {
+      "acc": 0.837,
+      "acc_stderr": 0.011686212712746832,
+      "macro_f1": 0.8368628016161592,
+      "macro_f1_stderr": 0.011700186338825688
+    },
+    "kobest_hellaswag": {
+      "acc": 0.486,
+      "acc_stderr": 0.022374298166353185,
+      "acc_norm": 0.602,
+      "acc_norm_stderr": 0.021912377885779977,
+      "macro_f1": 0.48409839892041046,
+      "macro_f1_stderr": 0.02243114102881359
+    },
+    "kobest_sentineg": {
+      "acc": 0.964735516372796,
+      "acc_stderr": 0.009268838286761628,
+      "macro_f1": 0.964733502538071,
+      "macro_f1_stderr": 0.009276229265596792
+    },
+    "kohatespeech": {
+      "acc": 0.39065817409766457,
+      "acc_stderr": 0.022505052156592348,
+      "macro_f1": 0.3823785461496243,
+      "macro_f1_stderr": 0.022858147719888124
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.8137931034482758,
+      "acc_stderr": 0.0063407672923925535,
+      "macro_f1": 0.8132462802947142,
+      "macro_f1_stderr": 0.006352945020698935
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.7685774946921444,
+      "acc_stderr": 0.019453497707976226,
+      "macro_f1": 0.5454352272425425,
+      "macro_f1_stderr": 0.026160444672851307
+    },
+    "korunsmile": {
+      "f1": 0.32007121897384816,
+      "f1_stderr": 0.007355600318790936
+    },
+    "nsmc": {
+      "acc": 0.866,
+      "acc_stderr": 0.0015234587025998616
+    },
+    "pawsx_ko": {
+      "acc": 0.546,
+      "acc_stderr": 0.011135708419359803
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=KT-AI/midm-bitext-S-7B-inst-v1,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 10,
+    "batch_size": "4",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
