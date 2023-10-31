@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.6118233618233618,
+      "acc_stderr": 0.013010646875160974,
+      "macro_f1": 0.5435486382158561,
+      "macro_f1_stderr": 0.013646653057181567
+    },
+    "kobest_copa": {
+      "acc": 0.796,
+      "acc_stderr": 0.01274937435902439,
+      "macro_f1": 0.7957908898712281,
+      "macro_f1_stderr": 0.012797948402235367
+    },
+    "kobest_hellaswag": {
+      "acc": 0.47,
+      "acc_stderr": 0.022342748192502846,
+      "acc_norm": 0.508,
+      "acc_norm_stderr": 0.022380208834928035,
+      "macro_f1": 0.4668380908827486,
+      "macro_f1_stderr": 0.022280169684876977
+    },
+    "kobest_sentineg": {
+      "acc": 0.9496221662468514,
+      "acc_stderr": 0.01099126232622814,
+      "macro_f1": 0.9496218466067712,
+      "macro_f1_stderr": 0.01104065577085508
+    },
+    "kohatespeech": {
+      "acc": 0.42038216560509556,
+      "acc_stderr": 0.022769006577450134,
+      "macro_f1": 0.36430086044304844,
+      "macro_f1_stderr": 0.02230175938071725
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.7291777188328913,
+      "acc_stderr": 0.007238454053473839,
+      "macro_f1": 0.7232224913175588,
+      "macro_f1_stderr": 0.007366274120067145
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.8577494692144374,
+      "acc_stderr": 0.016112326276355036,
+      "macro_f1": 0.5025458328735596,
+      "macro_f1_stderr": 0.023452745553232793
+    },
+    "korunsmile": {
+      "f1": 0.42503112792011,
+      "f1_stderr": 0.008677143509941634
+    },
+    "nsmc": {
+      "acc": 0.87318,
+      "acc_stderr": 0.001488213038365741
+    },
+    "pawsx_ko": {
+      "acc": 0.5495,
+      "acc_stderr": 0.011128198119942883
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=HumanF-MarkrAI/pub-llama-13B-v3,use_accelerate=true",
+    "num_fewshot": 50,
+    "batch_size": "4",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
