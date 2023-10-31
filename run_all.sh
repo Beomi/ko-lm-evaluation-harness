@@ -16,7 +16,7 @@ mkdir -p $RESULT_DIR/$MODEL_PATH/$CURRENT_TRAINED_TOKENS
 
 python main.py \
 --model hf-causal-experimental \
---model_args pretrained=$MODEL,use_accelerate=true \
+--model_args pretrained=$MODEL,use_accelerate=true,trust_remote_code=true \
 --tasks $TASKS \
 --num_fewshot 0 \
 --no_cache \
@@ -25,7 +25,7 @@ python main.py \
 
 python main.py \
 --model hf-causal-experimental \
---model_args pretrained=$MODEL,use_accelerate=true \
+--model_args pretrained=$MODEL,use_accelerate=true,trust_remote_code=true \
 --tasks $TASKS \
 --num_fewshot 5 \
 --no_cache \
@@ -34,7 +34,7 @@ python main.py \
 
 python main.py \
 --model hf-causal-experimental \
---model_args pretrained=$MODEL,use_accelerate=true \
+--model_args pretrained=$MODEL,use_accelerate=true,trust_remote_code=true \
 --tasks $TASKS \
 --num_fewshot 10 \
 --no_cache \
@@ -43,7 +43,7 @@ python main.py \
 
 python main.py \
 --model hf-causal-experimental \
---model_args pretrained=$MODEL,use_accelerate=true \
+--model_args pretrained=$MODEL,use_accelerate=true,trust_remote_code=true \
 --tasks $TASKS \
 --num_fewshot 50 \
 --no_cache \
