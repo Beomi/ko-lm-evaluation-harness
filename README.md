@@ -1,3 +1,72 @@
+# Ko LM Eval Harnesss
+
+한국어 공개 데이터셋으로 평가하는 언어모델 점수!
+
+## 사용법
+
+```bash
+git clone https://github.com/Beomi/ko-lm-evaluation-harness
+cd ko-lm-evaluation-harness
+pip install -r requirements.txt
+./run_all.sh 모델이름 'GPU번호들'
+# ex) ./run_all.sh beomi/llama-2-ko-7b '0,1' # 이렇게 하면 GPU0,1번에 'beomi/llama-2-ko-7b' 모델을 쪼개서 올리고 평가한다.
+```
+
+위 `run_all.sh` 실행 후, ko-lm-evaluation-harness 메인 폴더에서 [결과물한눈에보기.ipynb](https://github.com/Beomi/ko-lm-evaluation-harness/blob/main/%EA%B2%B0%EA%B3%BC%EB%AC%BC%ED%95%9C%EB%88%88%EC%97%90%EB%B3%B4%EA%B8%B0.ipynb) 실행
+
+## 예시 결과(markdown)
+
+- [beomi/llama-2-koen-13b](https://huggingface.co/beomi/llama-2-koen-13b) 테스트 결과
+
+```
+| Task                  |   0-shot |   5-shot |   10-shot |   50-shot |
+|:----------------------|---------:|---------:|----------:|----------:|
+| kobest_boolq          | 0.398848 | 0.703795 |  0.752612 |  0.7578   |
+| kobest_copa           | 0.776785 | 0.812796 |  0.818724 |  0.853953 |
+| kobest_hellaswag      | 0.499922 | 0.512659 |  0.503365 |  0.524664 |
+| kobest_sentineg       | 0.586955 | 0.974811 |  0.982367 |  0.987405 |
+| kohatespeech          | 0.278224 | 0.378693 |  0.370702 |  0.509343 |
+| kohatespeech_apeach   | 0.337667 | 0.556898 |  0.581788 |  0.667511 |
+| kohatespeech_gen_bias | 0.248404 | 0.484745 |  0.473659 |  0.461714 |
+| korunsmile            | 0.327145 | 0.329163 |  0.347889 |  0.395522 |
+| nsmc                  | 0.6442   | 0.87702  |  0.89982  |  0.90984  |
+| pawsx_ko              | 0.5355   | 0.5455   |  0.5435   |  0.5255   |
+```
+
+## 지원되는 테스트
+
+**현재 동작 가능 ✅**
+
+- kobest_hellaswag
+- kobest_copa
+- kobest_boolq
+- kobest_sentineg
+- kohatespeech
+- kohatespeech_apeach
+- kohatespeech_gen_bias
+- korunsmile
+- nsmc
+- pawsx_ko
+- klue_nli
+- klue_sts
+- klue_ynat
+
+**디버그 중 🧐**
+
+- korquad
+- ko_en_translation
+- en_ko_translation
+- klue_mrc
+
+## 지원되는 모델
+
+- Hugging Face Transformers에서 `AutoModelForCausalLM.from_pretrained`로 로딩 가능한 모든 모델
+  - ex) `beomi/llama-2-ko-7b`, `beomi/KoAlpaca-Polyglot-12.8B`,`EleutherAI/polyglot-ko-12.8b` 등
+
+> 아래는 원본 Eval Harness 레포 README
+
+---
+
 # Language Model Evaluation Harness
 
 ## Overview
