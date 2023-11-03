@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.7371794871794872,
+      "acc_stderr": 0.01175134061781661,
+      "macro_f1": 0.7356440842202159,
+      "macro_f1_stderr": 0.011792330132054078
+    },
+    "kobest_copa": {
+      "acc": 0.812,
+      "acc_stderr": 0.012361586015103749,
+      "macro_f1": 0.8119729241010706,
+      "macro_f1_stderr": 0.012414085234051879
+    },
+    "kobest_hellaswag": {
+      "acc": 0.49,
+      "acc_stderr": 0.022378596989230774,
+      "acc_norm": 0.546,
+      "acc_norm_stderr": 0.02228814759117695,
+      "macro_f1": 0.4880256951463623,
+      "macro_f1_stderr": 0.02239973170263633
+    },
+    "kobest_sentineg": {
+      "acc": 0.9697732997481109,
+      "acc_stderr": 0.008603653036070191,
+      "macro_f1": 0.9697731079640628,
+      "macro_f1_stderr": 0.008630446116797964
+    },
+    "kohatespeech": {
+      "acc": 0.40552016985138006,
+      "acc_stderr": 0.022647791761928493,
+      "macro_f1": 0.3428530265207104,
+      "macro_f1_stderr": 0.022747742759992827
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5989389920424403,
+      "acc_stderr": 0.007983318304261425,
+      "macro_f1": 0.5893531388380364,
+      "macro_f1_stderr": 0.008088820498179033
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.7919320594479831,
+      "acc_stderr": 0.018723956248298854,
+      "macro_f1": 0.551062091503268,
+      "macro_f1_stderr": 0.027141997349104958
+    },
+    "korunsmile": {
+      "f1": 0.436292014880024,
+      "f1_stderr": 0.008365391852259416
+    },
+    "nsmc": {
+      "acc": 0.87848,
+      "acc_stderr": 0.0014611983075575275
+    },
+    "pawsx_ko": {
+      "acc": 0.5225,
+      "acc_stderr": 0.011171807357801175
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=hyunseoki/ko-en-llama2-13b,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 50,
+    "batch_size": "4",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
