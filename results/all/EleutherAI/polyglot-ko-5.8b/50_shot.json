@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.5591168091168092,
+      "acc_stderr": 0.01325513665760259,
+      "macro_f1": 0.5543636495092019,
+      "macro_f1_stderr": 0.013283737279809913
+    },
+    "kobest_copa": {
+      "acc": 0.793,
+      "acc_stderr": 0.012818553557843984,
+      "macro_f1": 0.7926165479972469,
+      "macro_f1_stderr": 0.012853616949826462
+    },
+    "kobest_hellaswag": {
+      "acc": 0.51,
+      "acc_stderr": 0.02237859698923078,
+      "acc_norm": 0.62,
+      "acc_norm_stderr": 0.02172888143870171,
+      "macro_f1": 0.5073567433284377,
+      "macro_f1_stderr": 0.022355380892762258
+    },
+    "kobest_sentineg": {
+      "acc": 0.964735516372796,
+      "acc_stderr": 0.009268838286761628,
+      "macro_f1": 0.9647245493780147,
+      "macro_f1_stderr": 0.009270516861698237
+    },
+    "kohatespeech": {
+      "acc": 0.3970276008492569,
+      "acc_stderr": 0.022568886746229363,
+      "macro_f1": 0.30337714384899334,
+      "macro_f1_stderr": 0.0170430296712993
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.49045092838196286,
+      "acc_stderr": 0.00814287408168772,
+      "macro_f1": 0.3299792994183021,
+      "macro_f1_stderr": 0.003751067435792206
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.8577494692144374,
+      "acc_stderr": 0.016112326276355036,
+      "macro_f1": 0.46171428571428574,
+      "macro_f1_stderr": 0.004689874259671842
+    },
+    "korunsmile": {
+      "f1": 0.28373150797579144,
+      "f1_stderr": 0.005607902474948781
+    },
+    "nsmc": {
+      "acc": 0.83588,
+      "acc_stderr": 0.0016564260885854015
+    },
+    "pawsx_ko": {
+      "acc": 0.535,
+      "acc_stderr": 0.01115570369194311
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=EleutherAI/polyglot-ko-5.8b,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 50,
+    "batch_size": "4",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
