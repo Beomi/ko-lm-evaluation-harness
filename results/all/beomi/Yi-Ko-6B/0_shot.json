@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.7086894586894587,
+      "acc_stderr": 0.012130459468719068,
+      "macro_f1": 0.7058058963212672,
+      "macro_f1_stderr": 0.012192955970237167
+    },
+    "kobest_copa": {
+      "acc": 0.776,
+      "acc_stderr": 0.013190830072364452,
+      "macro_f1": 0.7756041657483802,
+      "macro_f1_stderr": 0.013174601277923916
+    },
+    "kobest_hellaswag": {
+      "acc": 0.504,
+      "acc_stderr": 0.022382357781962132,
+      "acc_norm": 0.564,
+      "acc_norm_stderr": 0.022198954641476802,
+      "macro_f1": 0.5008762472135425,
+      "macro_f1_stderr": 0.022460321847938034
+    },
+    "kobest_sentineg": {
+      "acc": 0.5365239294710328,
+      "acc_stderr": 0.025058819823556774,
+      "macro_f1": 0.4043705153294194,
+      "macro_f1_stderr": 0.020632764715034686
+    },
+    "kohatespeech": {
+      "acc": 0.4309978768577495,
+      "acc_stderr": 0.022842602368878293,
+      "macro_f1": 0.3534279740288324,
+      "macro_f1_stderr": 0.017222848608115616
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5098143236074271,
+      "acc_stderr": 0.008142790404217842,
+      "macro_f1": 0.3376669009135629,
+      "macro_f1_stderr": 0.0035712112150843973
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.14225053078556263,
+      "acc_stderr": 0.016112326276355036,
+      "macro_f1": 0.12453531598513011,
+      "macro_f1_stderr": 0.01239007174718049
+    },
+    "korunsmile": {
+      "f1": 0.38280356886721445,
+      "f1_stderr": 0.007841261253654738
+    },
+    "nsmc": {
+      "acc": 0.55064,
+      "acc_stderr": 0.0022245922737027675
+    },
+    "pawsx_ko": {
+      "acc": 0.5145,
+      "acc_stderr": 0.011178432523249468
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=beomi/Yi-Ko-6B,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 0,
+    "batch_size": "8",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.8148148148148148,
+      "acc_stderr": 0.010370596640401896,
+      "macro_f1": 0.8142989408568783,
+      "macro_f1_stderr": 0.010429158919293073
+    },
+    "kobest_copa": {
+      "acc": 0.817,
+      "acc_stderr": 0.01223358739947783,
+      "macro_f1": 0.8168664956753473,
+      "macro_f1_stderr": 0.012228455441471829
+    },
+    "kobest_hellaswag": {
+      "acc": 0.498,
+      "acc_stderr": 0.022382894986483524,
+      "acc_norm": 0.582,
+      "acc_norm_stderr": 0.022080014812228137,
+      "macro_f1": 0.4935073756283037,
+      "macro_f1_stderr": 0.02241865626396302
+    },
+    "kobest_sentineg": {
+      "acc": 0.982367758186398,
+      "acc_stderr": 0.006613680698322635,
+      "macro_f1": 0.982367758186398,
+      "macro_f1_stderr": 0.006640829036433662
+    },
+    "kohatespeech": {
+      "acc": 0.40764331210191085,
+      "acc_stderr": 0.022666417290057427,
+      "macro_f1": 0.4024232472508335,
+      "macro_f1_stderr": 0.023051084007124502
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.5503978779840849,
+      "acc_stderr": 0.008102881410769628,
+      "macro_f1": 0.4719622241222321,
+      "macro_f1_stderr": 0.007990017036239873
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.8535031847133758,
+      "acc_stderr": 0.016310517322078767,
+      "macro_f1": 0.4744748629549975,
+      "macro_f1_stderr": 0.014925372262596196
+    },
+    "korunsmile": {
+      "f1": 0.391382519236011,
+      "f1_stderr": 0.007739886316896056
+    },
+    "nsmc": {
+      "acc": 0.89866,
+      "acc_stderr": 0.0013496075417725522
+    },
+    "pawsx_ko": {
+      "acc": 0.538,
+      "acc_stderr": 0.011150792352341666
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=beomi/Yi-Ko-6B,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 10,
+    "batch_size": "2",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "results": {
+    "kobest_boolq": {
+      "acc": 0.76994301994302,
+      "acc_stderr": 0.01123616646857404,
+      "macro_f1": 0.7646269907795474,
+      "macro_f1_stderr": 0.011465075321451803
+    },
+    "kobest_copa": {
+      "acc": 0.815,
+      "acc_stderr": 0.01228519132638669,
+      "macro_f1": 0.8149331908819084,
+      "macro_f1_stderr": 0.012279043581100563
+    },
+    "kobest_hellaswag": {
+      "acc": 0.51,
+      "acc_stderr": 0.02237859698923078,
+      "acc_norm": 0.582,
+      "acc_norm_stderr": 0.022080014812228137,
+      "macro_f1": 0.5075970606890639,
+      "macro_f1_stderr": 0.02236157140327459
+    },
+    "kobest_sentineg": {
+      "acc": 0.9722921914357683,
+      "acc_stderr": 0.008248061588744124,
+      "macro_f1": 0.9722914882142063,
+      "macro_f1_stderr": 0.008305281670243109
+    },
+    "kohatespeech": {
+      "acc": 0.49469214437367304,
+      "acc_stderr": 0.023061980625237396,
+      "macro_f1": 0.49718474484625363,
+      "macro_f1_stderr": 0.023074740809783455
+    },
+    "kohatespeech_apeach": {
+      "acc": 0.6445623342175066,
+      "acc_stderr": 0.00779652574021435,
+      "macro_f1": 0.6093408053342093,
+      "macro_f1_stderr": 0.008211551686842615
+    },
+    "kohatespeech_gen_bias": {
+      "acc": 0.851380042462845,
+      "acc_stderr": 0.01640783840696138,
+      "macro_f1": 0.4867044463818658,
+      "macro_f1_stderr": 0.019627436224558953
+    },
+    "korunsmile": {
+      "f1": 0.4124084541826479,
+      "f1_stderr": 0.007713820654322927
+    },
+    "nsmc": {
+      "acc": 0.90436,
+      "acc_stderr": 0.0013152545023255341
+    },
+    "pawsx_ko": {
+      "acc": 0.545,
+      "acc_stderr": 0.011137752231145222
+    }
+  },
+  "versions": {
+    "kobest_boolq": 0,
+    "kobest_copa": 0,
+    "kobest_hellaswag": 0,
+    "kobest_sentineg": 0,
+    "kohatespeech": 0,
+    "kohatespeech_apeach": 0,
+    "kohatespeech_gen_bias": 0,
+    "korunsmile": 0,
+    "nsmc": 0,
+    "pawsx_ko": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=beomi/Yi-Ko-6B,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 50,
+    "batch_size": "1",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}

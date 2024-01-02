@@ -1,0 +1,22 @@
+{
+  "results": {
+    "korquad": {
+      "exact_match": 61.257360581918945,
+      "f1": 68.733338166683
+    }
+  },
+  "versions": {
+    "korquad": 1
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=beomi/llama-2-ko-7b-emb-dev,use_accelerate=true,trust_remote_code=true",
+    "num_fewshot": 0,
+    "batch_size": "8",
+    "device": null,
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
